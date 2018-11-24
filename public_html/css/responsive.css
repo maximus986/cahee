@@ -1,0 +1,238 @@
+@media (min-width: 576px) {
+    .gallery .gallery-description,
+    .blog .blog-description {
+        width: 90%;
+    }
+
+    .subscribe-content {
+        color: #262626;
+    }
+
+    .contact .contact-form {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .contact .contact-description {
+        width: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    .main-header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .navbar .navbar-nav {
+        background: transparent;
+    }
+
+    .navbar-light .navbar-nav .active > .nav-link {
+        background: transparent;
+        color: #000;
+        border-top: 2px solid #FF6033;
+    }
+
+    .navbar-light .navbar-nav .nav-item:hover {
+        background: transparent;
+        color: #000;
+
+    }
+    .navbar-light .navbar-nav .nav-link {
+        border-top: 2px solid transparent;
+        font-size: 1.1rem;
+        padding: 5px 0;
+        margin-left: 15px;
+    }
+
+    .navbar-light .navbar-nav .nav-item:first-of-type .nav-link{
+        margin-left: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: #000;
+    }
+
+    .hvr-overline-from-left {
+        display: inline-block;
+        vertical-align: middle;
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        position: relative;
+        overflow: hidden;
+    }
+    .hvr-overline-from-left:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 100%;
+        top: 0;
+        background: #FF6033;
+        height: 2px;
+        transition-property: right;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+    .hvr-overline-from-left:hover:before, 
+    .hvr-overline-from-left:focus:before, 
+    .hvr-overline-from-left:active:before {
+        right: 0;
+    }
+
+    .navbar-light button.hamburger {
+        display: none;
+    }
+
+    .about {
+        padding: 50px 0;
+    }
+
+    .services {
+        padding: 50px 0 70px !important;
+    }
+
+    .gallery {
+        padding: 60px 0 80px !important;
+    }
+
+    .mb-md-custom {
+        margin-bottom: 22px;
+    }
+
+    .gallery .gallery-description,
+    .blog .blog-description {
+        width: 80%;
+    }
+
+    .blog .blog-item-date {
+        margin: 1.3rem;
+    }
+
+
+    .blog .blog-item-date-day,
+    .blog .blog-item-date-month {
+        font-size: 1.1rem;
+    }
+
+    .blog .blog-item-date-day {
+        font-size: 1.5rem;
+    }
+
+    .blog .blog-item-content .blog-item-content-title {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+    }
+
+    .contact .contact-description {
+        width: 40%;
+    }
+
+}
+
+
+@media (min-width: 992px) {
+    html {
+        font-size: 17px;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        margin-left: 30px;
+    }
+
+    .navbar-light .navbar-nav .nav-item:first-of-type .nav-link{
+        margin-left: 0;
+    }
+
+    .hero {
+        padding: 250px 0;
+    }
+
+    .about {
+        padding: 50px 0;
+    }
+
+    .services {
+        padding: 70px 0 100px !important;
+    }
+
+    .gallery {
+        padding: 80px 0 100px !important;
+    }
+
+    .gallery .row {
+        margin-bottom: 41px !important;
+    }
+
+    .gallery .gallery-description,
+    .blog .blog-description {
+        width: 60%;
+    }
+
+    .blog .blog-item-date {
+        margin: 1.8rem;
+    }
+
+
+    .blog .blog-item-date-day,
+    .blog .blog-item-date-month {
+        font-size: 1.4rem;
+    }
+
+    .blog .blog-item-date-day {
+        font-size: 1.8rem;
+    }
+
+    .blog .blog-item-content {
+        visibility: hidden;
+        transition: 0.2s ease;
+    }
+
+    .blog .blog-item figure:hover::before {
+        opacity: 0.9;
+    }
+
+    .blog .blog-item figure:hover .blog-item-content {
+        visibility: visible;
+    }
+
+    .blog .blog-item .blog-item-content-title:hover a {
+        color: #B07CF7;
+    }
+
+    .blog .blog-item-content .blog-item-content-title {
+        font-size: 1.17rem; 
+    }
+
+    .main-footer .main-footer-logo a:hover {
+        color: #F72B3B;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        padding: 200px 0 420px;
+    }
+
+    .services {
+        padding: 100px 0 151px !important;
+    }
+
+    .gallery {
+        padding: 100px 0 120px !important;
+    }
+
+    .gallery .gallery-description,
+    .blog .blog-description {
+        margin-bottom: 41px !important;
+        width: 50%;
+    }
+
+    .contact .contact-description {
+        width: 32%;
+        margin-bottom: 41px !important;
+    }
+}
