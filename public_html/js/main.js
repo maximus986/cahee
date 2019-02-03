@@ -32,7 +32,7 @@ $(document).ready(function () {
 
     $('.animation').each(function () {
       const topPosition = $(this).offset().top;
-      if (topPosition < scrollTop + windowHeight - 300) {
+      if (topPosition < scrollTop + windowHeight - 150) {
         const animation = $(this).data('animation');
         $(this).addClass(animation);
       }
