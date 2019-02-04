@@ -246,13 +246,16 @@ and open the template in the editor.
                                     et dolore magna aliqua. Ut enim ad minim veniam.
                                 </p>
                                 <div class="form-group">
-                                    <input type="email" name="email" value="" placeholder="Your email adress..." class="form-control" />
+                                    <div class="error-msg"></div>
+                                    <input type="email" name="email" value="" placeholder="Your email address..." class="form-control" />
+
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-sm-3 col-md-4 col-lg-2">
                             <div class="form-group">
-                                <button type="button" class="btn btn-danger text-uppercase text-white btn-subscribe">Subscribe</button>
+                                <button type="button" class="btn btn-danger text-uppercase text-white btn-subscribe"
+                                    name="send" value="yes">Subscribe</button>
                             </div>
                         </div>
                     </div>
@@ -347,18 +350,23 @@ and open the template in the editor.
                         <form method="post" action="" class="contact-form mb-5 animation" data-animation="slideRight">
                             <div class="form-group">
                                 <input type="text" name="name" value="" placeholder="Your name..." class="form-control" />
+                                <div class="error-msg"></div>
                             </div>
                             <div class="form-group">
                                 <input type="email" name="email" value="" placeholder="Your email..." class="form-control" />
+                                <div class="error-msg"></div>
                             </div>
                             <div class="form-group">
-                                <input type="tel" name="phone" value="" placeholder="Your your phone number..." class="form-control" />
+                                <input type="tel" name="phone" value="" placeholder="Your phone number..." class="form-control" />
+                                <div class="error-msg"></div>
                             </div>
                             <div class="form-group mb-5">
                                 <textarea name="message" placeholder="Your message..." class="form-control" rows="4"></textarea>
+                                <div class="error-msg"></div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-danger text-uppercase text-white">Send</button>
+                                <button type="submit" class="btn btn-danger text-uppercase text-white" name="send"
+                                    value="yes">Send</button>
                             </div>
                         </form>
                     </div>
@@ -417,7 +425,91 @@ and open the template in the editor.
     <script src="js/popper.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/main.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $(".contact-form").validate({
+                    highlight: function (element) {
+                        $(element).closest(".form-group").addClass("has-danger");
+                        $(element).addClass("form-control-danger");
+                    },
+                    unhighlight: function (element) {
+                        $(element).closest(".form-group").removeClass("has-danger").addClass("has-success");
+                        $(element).removeClass("form-control-danger").addClass("form-control-success");
+                    },
+                    rules: {
+                        name: {
+                            required: true,
+                            rangelength: [2, 20]
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        phone: {
+                            required: true,
+                            digits: true
+                        },
+                        message: {
+                            required: true,
+                            maxlength: 255
+                        }
+                    },
+                    messages: {
+                        name: {
+                            required: "This field is required.",
+                            rangelength: "This field must contains between 2 adn 20 characters."
+                        },
+                        email: {
+                            required: "This field is required.",
+                            email: "Please enter a valid email."
+                        },
+                        phone: {
+                            required: "This field is required.",
+                            digits: "Please enter a valid phone number."
+                        },
+                        message: {
+                            required: "This field is required.",
+                            maxlength: "This field can't have more than 255 characters."
+                        }
+                    },
+                    errorElement: "p",
+                    errorPlacement: function (error, element) {
+                        error.appendTo($(element).closest(".form-group").find(".error-msg"));
+                    }
+
+                });
+                $(".subscribe-form").validate({
+                    highlight: function (element) {
+                        $(element).closest(".form-group").addClass("has-danger");
+                        $(element).addClass("form-control-danger");
+                    },
+                    unhighlight: function (element) {
+                        $(element).closest(".form-group").removeClass("has-danger").addClass("has-success");
+                        $(element).removeClass("form-control-danger").addClass("form-control-success");
+                    },
+                    rules: {
+                        email: {
+                            required: true,
+                            email: true
+                        }
+                    },
+                    messages: {
+                        email: {
+                            required: "This field is required.",
+                            email: "Please enter a valid email."
+                        }
+                    },
+                    errorElement: "p",
+                    errorPlacement: function (error, element) {
+                        error.appendTo($(element).closest(".form-group").find(".error-msg"));
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
